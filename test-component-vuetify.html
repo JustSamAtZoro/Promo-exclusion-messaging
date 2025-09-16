@@ -56,6 +56,69 @@
             color: #475569;
             overflow-x: auto;
         }
+
+        /* Override Vuetify defaults to maintain exact design */
+        .promo-restriction-message {
+            width: 100% !important;
+            font-family: 'Roboto', sans-serif !important;
+        }
+
+        .success-icon {
+            width: 14px !important;
+            height: 14px !important;
+        }
+
+        .message-content {
+            font-size: 14px !important;
+            line-height: 1.375 !important;
+            color: #222222 !important;
+        }
+
+        .custom-check-icon {
+            width: 14px !important;
+            height: 14px !important;
+        }
+
+        /* Mobile Responsiveness - Override Vuetify classes */
+        @media (max-width: 768px) {
+            .promo-restriction-message {
+                padding: 6px 10px !important;
+            }
+            
+            .message-content {
+                font-size: 13px !important;
+                gap: 3px !important;
+            }
+            
+            .success-icon {
+                width: 12px !important;
+                height: 12px !important;
+            }
+            
+            .custom-check-icon {
+                width: 12px !important;
+                height: 12px !important;
+            }
+            
+            .custom-check-icon svg {
+                width: 12px !important;
+                height: 12px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .promo-restriction-message {
+                padding: 4px 8px !important;
+                gap: 6px !important;
+            }
+            
+            .message-content {
+                font-size: 12px !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 2px !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -133,71 +196,7 @@
                         <span class="font-weight-regular text-grey-darken-4">not eligible for any other offers or promotions</span>
                     </div>
                 </v-sheet>
-            `,
-            style: \`
-                /* Override Vuetify defaults to maintain exact design */
-                .promo-restriction-message {
-                    width: 100% !important;
-                    font-family: 'Roboto', sans-serif !important;
-                }
-
-                .success-icon {
-                    width: 14px !important;
-                    height: 14px !important;
-                }
-
-                .message-content {
-                    font-size: 14px !important;
-                    line-height: 1.375 !important;
-                    color: #222222 !important;
-                }
-
-                .custom-check-icon {
-                    width: 14px !important;
-                    height: 14px !important;
-                }
-
-                /* Mobile Responsiveness - Override Vuetify classes */
-                @media (max-width: 768px) {
-                    .promo-restriction-message {
-                        padding: 6px 10px !important;
-                    }
-                    
-                    .message-content {
-                        font-size: 13px !important;
-                        gap: 3px !important;
-                    }
-                    
-                    .success-icon {
-                        width: 12px !important;
-                        height: 12px !important;
-                    }
-                    
-                    .custom-check-icon {
-                        width: 12px !important;
-                        height: 12px !important;
-                    }
-                    
-                    .custom-check-icon svg {
-                        width: 12px !important;
-                        height: 12px !important;
-                    }
-                }
-
-                @media (max-width: 480px) {
-                    .promo-restriction-message {
-                        padding: 4px 8px !important;
-                        gap: 6px !important;
-                    }
-                    
-                    .message-content {
-                        font-size: 12px !important;
-                        flex-direction: column !important;
-                        align-items: flex-start !important;
-                        gap: 2px !important;
-                    }
-                }
-            \`
+            `
         };
 
         createApp({
