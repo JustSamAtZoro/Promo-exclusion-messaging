@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoro Promo Restriction Message Component</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            background-color: #ffffff;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #1e293b;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .description {
+            color: #64748b;
+            font-size: 16px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .version-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .version-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 24px;
+            background-color: #f8fafc;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .version-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .version-title {
+            color: #1e293b;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .version-description {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .version-link {
+            display: inline-block;
+            background-color: #3b82f6;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .version-link:hover {
+            background-color: #2563eb;
+        }
+
+        .vuetify-link {
+            background-color: #1976d2;
+        }
+
+        .vuetify-link:hover {
+            background-color: #1565c0;
+        }
+
+        .component-preview {
+            margin: 40px 0;
+            padding: 30px;
+            background-color: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .preview-title {
+            color: #1e293b;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Component Styles - Exact Figma Design */
+        .promo-restriction-message {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background-color: #eaeef0;
+            border: 1px solid #b0bec6;
+            border-radius: 4px;
+            font-family: 'Roboto', sans-serif;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+            max-width: 500px;
+        }
+
+        .success-icon {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 14px;
+            height: 14px;
+        }
+
+        .message-content {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 14px;
+            line-height: 1.375;
+            color: #222222;
+        }
+
+        .bold-text {
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .regular-text {
+            font-weight: 400;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .footer {
+            text-align: center;
+            color: #64748b;
+            font-size: 14px;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Zoro Promo Restriction Message Component</h1>
+        <p class="description">
+            A reusable Vue.js component for displaying promo restriction messages with exact Figma design specifications.
+        </p>
+
+        <div class="component-preview">
+            <h3 class="preview-title">Component Preview</h3>
+            <div class="promo-restriction-message">
+                <div class="success-icon">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 0C3.13401 0 0 3.13401 0 7C0 10.866 3.13401 14 7 14C10.866 14 14 10.866 14 7C14 3.13401 10.866 0 7 0ZM10.7812 5.78125L6.78125 9.78125C6.625 9.9375 6.40625 10.0156 6.1875 10.0156C5.96875 10.0156 5.75 9.9375 5.59375 9.78125L3.21875 7.40625C2.90625 7.09375 2.90625 6.59375 3.21875 6.28125C3.53125 5.96875 4.03125 5.96875 4.34375 6.28125L6.1875 8.125L9.65625 4.65625C9.96875 4.34375 10.4688 4.34375 10.7812 4.65625C11.0938 4.96875 11.0938 5.46875 10.7812 5.78125Z" fill="#4D7F23"/>
+                    </svg>
+                </div>
+                <div class="message-content">
+                    <span class="bold-text">Zoro's best price:</span>
+                    <span class="regular-text">not eligible for any other offers or promotions</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="version-grid">
+            <div class="version-card">
+                <h2 class="version-title">Original Version</h2>
+                <p class="version-description">
+                    Standard Vue.js component with custom CSS. Works in any Vue.js project without additional dependencies.
+                </p>
+                <a href="test-component.html" class="version-link">View Original Version</a>
+            </div>
+
+            <div class="version-card">
+                <h2 class="version-title">Vuetify Version</h2>
+                <p class="version-description">
+                    Vuetify 3.7.2 compatible version using v-sheet, v-icon, and utility classes. Perfect for Vuetify projects.
+                </p>
+                <a href="test-component-vuetify.html" class="version-link vuetify-link">View Vuetify Version</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Built for Zoro.com • Vue.js Component • Exact Figma Design Implementation</p>
+        </div>
+    </div>
+</body>
+</html>
