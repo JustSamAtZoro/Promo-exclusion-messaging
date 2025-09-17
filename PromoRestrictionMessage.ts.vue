@@ -47,13 +47,10 @@ interface Props {
 }
 
 // Define props with default values
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   boldText: "Zoro's best price",
   regularText: "not eligible for any other offers or promotions"
 });
-
-// Type-safe computed properties (if needed in the future)
-// const displayMessage = computed(() => `${props.boldText}: ${props.regularText}`);
 </script>
 
 <style scoped>
