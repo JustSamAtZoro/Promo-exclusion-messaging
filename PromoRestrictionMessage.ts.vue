@@ -2,11 +2,6 @@
   <v-sheet
     class="promo-restriction-message d-flex align-center ga-2 pa-2 px-3"
     color="transparent"
-    :style="{
-      backgroundColor: '#eaeef0',
-      border: '1px solid #b0bec6',
-      borderRadius: '4px'
-    }"
   >
     <div class="success-icon flex-shrink-0 d-flex align-center justify-center">
       <v-icon
@@ -20,17 +15,45 @@
       </v-icon>
     </div>
     <div class="message-content d-flex align-center ga-1 text-body-2">
-      <span class="font-weight-bold text-grey-darken-4">Zoro's best price:</span>
-      <span class="font-weight-regular text-grey-darken-4">not eligible for any other offers or promotions</span>
+      <span class="font-weight-bold text-grey-darken-4">{{ boldText }}:</span>
+      <span class="font-weight-regular text-grey-darken-4">{{ regularText }}</span>
     </div>
   </v-sheet>
 </template>
 
 <script setup lang="ts">
-// TypeScript Vue 3 Composition API component
-// No props needed for this component as it displays static content
+/**
+ * PromoRestrictionMessage - TypeScript Vue 3 Component
+ * 
+ * A reusable Vuetify component for displaying promo restriction messages
+ * with exact Figma design specifications.
+ * 
+ * @example
+ * <PromoRestrictionMessage />
+ * 
+ * @example Custom text
+ * <PromoRestrictionMessage 
+ *   bold-text="Custom offer"
+ *   regular-text="terms and conditions apply"
+ * />
+ */
 
-// Component name is inferred from filename: PromoRestrictionMessage
+// Define component props with TypeScript types
+interface Props {
+  /** The bold text portion of the message */
+  boldText?: string;
+  /** The regular text portion of the message */
+  regularText?: string;
+}
+
+// Define props with default values
+const props = withDefaults(defineProps<Props>(), {
+  boldText: "Zoro's best price",
+  regularText: "not eligible for any other offers or promotions"
+});
+
+// Type-safe computed properties (if needed in the future)
+// const displayMessage = computed(() => `${props.boldText}: ${props.regularText}`);
 </script>
 
 <style scoped>
@@ -38,6 +61,10 @@
 .promo-restriction-message {
   width: 100% !important;
   font-family: 'Roboto', sans-serif !important;
+  background-color: #eaeef0 !important;
+  background: #eaeef0 !important;
+  border: 1px solid #b0bec6 !important;
+  border-radius: 4px !important;
 }
 
 .success-icon {

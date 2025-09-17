@@ -1,0 +1,40 @@
+{
+  "name": "promo-restriction-message",
+  "version": "1.0.0",
+  "description": "A TypeScript Vue 3 + Vuetify component for displaying promo restriction messages",
+  "main": "PromoRestrictionMessage.vue",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "type-check": "vue-tsc --noEmit"
+  },
+  "keywords": [
+    "vue",
+    "vuetify",
+    "typescript",
+    "component",
+    "promo",
+    "restriction",
+    "zoro"
+  ],
+  "author": "Zoro.com",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^3.4.0",
+    "vuetify": "^3.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@vue/tsconfig": "^0.5.0",
+    "typescript": "^5.3.0",
+    "vite": "^5.0.0",
+    "vue-tsc": "^2.0.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0",
+    "vuetify": "^3.7.2"
+  }
+}
