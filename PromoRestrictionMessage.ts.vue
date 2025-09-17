@@ -1,31 +1,8 @@
-<template>
-  <v-sheet
-    class="promo-restriction-message d-flex align-center ga-2 pa-2 px-3"
-    color="transparent"
-  >
-    <div class="success-icon flex-shrink-0 d-flex align-center justify-center">
-      <v-icon
-        size="14"
-        color="#4D7F23"
-        class="custom-check-icon"
-      >
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7 0C3.13401 0 0 3.13401 0 7C0 10.866 3.13401 14 7 14C10.866 14 14 10.866 14 7C14 3.13401 10.866 0 7 0ZM10.7812 5.78125L6.78125 9.78125C6.625 9.9375 6.40625 10.0156 6.1875 10.0156C5.96875 10.0156 5.75 9.9375 5.59375 9.78125L3.21875 7.40625C2.90625 7.09375 2.90625 6.59375 3.21875 6.28125C3.53125 5.96875 4.03125 5.96875 4.34375 6.28125L6.1875 8.125L9.65625 4.65625C9.96875 4.34375 10.4688 4.34375 10.7812 4.65625C11.0938 4.96875 11.0938 5.46875 10.7812 5.78125Z" fill="currentColor"/>
-        </svg>
-      </v-icon>
-    </div>
-    <div class="message-content d-flex align-center ga-1 text-body-2">
-      <span class="font-weight-bold text-grey-darken-4">{{ boldText }}:</span>
-      <span class="font-weight-regular text-grey-darken-4">{{ regularText }}</span>
-    </div>
-  </v-sheet>
-</template>
-
 <script setup lang="ts">
 /**
  * PromoRestrictionMessage - TypeScript Vue 3 Component
  * 
- * A reusable Vuetify component for displaying promo restriction messages
+ * A reusable component for displaying promo restriction messages
  * with exact Figma design specifications.
  * 
  * @example
@@ -53,71 +30,84 @@ withDefaults(defineProps<Props>(), {
 });
 </script>
 
-<style scoped>
-/* Override Vuetify defaults to maintain exact design */
+<template>
+  <div class="promo-restriction-message">
+    <div class="success-icon">
+      <i class="fa fa-check-circle"></i>
+    </div>
+    <div class="message-content">
+      <span class="bold-text">{{ boldText }}:</span>
+      <span class="regular-text">{{ regularText }}</span>
+    </div>
+  </div>
+</template>
+
+<style lang="scss" scoped>
 .promo-restriction-message {
-  width: 100% !important;
-  font-family: 'Roboto', sans-serif !important;
-  background-color: #eaeef0 !important;
-  background: #eaeef0 !important;
-  border: 1px solid #b0bec6 !important;
-  border-radius: 4px !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  background-color: #eaeef0;
+  border: 1px solid #b0bec6;
+  border-radius: 4px;
+
+  @media (max-width: 768px) {
+    padding: 6px 10px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 4px 8px;
+    gap: 6px;
+  }
 }
 
 .success-icon {
-  width: 14px !important;
-  height: 14px !important;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .fa-check-circle {
+    color: #4D7F23;
+    font-size: 14px;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
 }
 
 .message-content {
-  font-size: 14px !important;
-  line-height: 1.375 !important;
-  color: #222222 !important;
-}
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  line-height: 1.375;
+  color: #222222;
 
-.custom-check-icon {
-  width: 14px !important;
-  height: 14px !important;
-}
+  @media (max-width: 768px) {
+    font-size: 13px;
+    gap: 3px;
+  }
 
-/* Mobile Responsiveness - Override Vuetify classes */
-@media (max-width: 768px) {
-  .promo-restriction-message {
-    padding: 6px 10px !important;
-  }
-  
-  .message-content {
-    font-size: 13px !important;
-    gap: 3px !important;
-  }
-  
-  .success-icon {
-    width: 12px !important;
-    height: 12px !important;
-  }
-  
-  .custom-check-icon {
-    width: 12px !important;
-    height: 12px !important;
-  }
-  
-  .custom-check-icon svg {
-    width: 12px !important;
-    height: 12px !important;
+  @media (max-width: 480px) {
+    font-size: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
   }
 }
 
-@media (max-width: 480px) {
-  .promo-restriction-message {
-    padding: 4px 8px !important;
-    gap: 6px !important;
-  }
-  
-  .message-content {
-    font-size: 12px !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 2px !important;
-  }
+.bold-text {
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+}
+
+.regular-text {
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
 }
 </style>
