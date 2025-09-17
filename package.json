@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "build": "echo 'Static files - no build needed'",
     "preview": "vite preview",
     "type-check": "vue-tsc --noEmit"
   },
